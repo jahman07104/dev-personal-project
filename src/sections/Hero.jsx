@@ -1,0 +1,129 @@
+import { Button } from "@/components/Button";
+import {
+  ArrowRight,
+  ChevronDown,
+  Github,
+  Linkedin,
+  Twitter,
+  Download,
+} from "lucide-react";
+import { AnimatedBorderButton } from "../assets/AnimatedBorderButton";
+
+export const Hero = () => {
+  return (
+    <section className="relaitive min-h-screen flex items-center overflow-hidden">
+      {/* Bg */}
+      <div className="absolute inset-0">
+        <img
+          src="/hero-bg.jpg"
+          alt="Hero image"
+          className=" w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+      </div>
+
+      {/* green Dots */}
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <div
+            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            style={{
+              backgroundColor: "#20B2A6",
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `slow-drift ${
+                15 + Math.random() * 20
+              }s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+
+      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Column */}
+          <div className="space-y-8">
+            <div className="animate-fade-in">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+                <span className="w=2 h-2 bg-primary rounded-full animate-pulse" />
+                Telecommunications Engineer . Telco Specialist
+              </span>
+            </div>
+            {/*  Headline*/}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Crafting <span className="text-primary glow-text">digital</span>
+                <br />
+                experience with
+                <br />
+                <span className=" font-serif italic font-normal text-white">
+                  precision.
+                </span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-300">
+                Hi, My name is Patrick Harrison- a telecommunication expert and
+                budding software Engineer I retired after 32 years with verizon
+                and now I am learninfg to write software as a second carreer . I
+                will combine both carrers into a Telecommunication Engineer who
+                can write his own programs
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex- flex-wrap gap-4 animate-fade-in animation-delay-300 ">
+              <Button size="lg">
+                Contact Me <ArrowRight className="w-5 h-5" />
+              </Button>
+              <AnimatedBorderButton />
+            </div>
+
+            {/* social links */}
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span className="text-sm text-muted-foreground">
+                Follow me here :
+              </span>
+              {[
+                { icon: Github, href: "#" },
+                { icon: Linkedin, href: "#" },
+                { icon: Twitter, href: "#" },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className=" p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                >
+                  {<social.icon className="w-5 h-5" />}
+                </a>
+              ))}
+            </div>
+          </div>
+          {/* Right Column -Profile Image */}
+          <div className="relative animate-fade-in animation-delay-300">
+            {/* Profile image */}
+
+            <div className="relative max-w-md mx-auto">
+              <div
+                className="absolute inset-0
+              rounded-3xl bg-gradient-to-br
+              from-primary/30 via-transparent
+              to-primary/10 blur-2xl aniate pulse"
+              ></div>
+              <div className="relative glass rounded-3xl p-2 glow-border">
+                <img
+                  src="/profile-photo.jpg"
+                  alt="Patrick Harrison"
+                  className="w-full
+                  aspect-[4-5] object-cover rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
