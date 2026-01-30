@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const projects = [
   {
     title: "Project Title",
@@ -75,8 +74,4 @@ export const Projects = () => {
       </div>
     </section>
   );
-=======
-export const Projects = () => {
-  return <section></section>;
->>>>>>> refs/remotes/origin/main
 };
