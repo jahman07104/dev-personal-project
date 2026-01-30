@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button";
 import { Menu, X } from "lucide-react";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -7,10 +8,20 @@ const navLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#testimonials", label: "Testimonials" },
+=======
+import { useState } from "react";
+
+const navLinks = [
+  { href: "#About", label: "About" },
+  { href: "#Projects", label: "Projects" },
+  { href: "#Experience", label: "Experience" },
+  { href: "#Testimonials", label: "Testimonials" },
+>>>>>>> refs/remotes/origin/main
 ];
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobilMenuOpen] = useState(false);
+<<<<<<< HEAD
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,6 +38,10 @@ export const Navbar = () => {
         isScrolled ? " glass-strong py-3" : "bg-transparent py-5"
       } z-50`}
     >
+=======
+  return (
+    <header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-50">
+>>>>>>> refs/remotes/origin/main
       <nav className="container mx-auto px-6 flex items-center justify-between ">
         <a
           href="#"
@@ -68,15 +83,22 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
+<<<<<<< HEAD
                 onClick={() => setIsMobilMenuOpen(false)}
+=======
+>>>>>>> refs/remotes/origin/main
                 className="text-lg text-muted-foreground hover:text-foreground py-2"
               >
                 {link.label}
               </a>
             ))}
+<<<<<<< HEAD
             <Button onClick={() => setIsMobilMenuOpen(false)} size="sm">
               Contact Me
             </Button>
+=======
+            <Button size="sm">Contact Me</Button>
+>>>>>>> refs/remotes/origin/main
           </div>
         </div>
       )}

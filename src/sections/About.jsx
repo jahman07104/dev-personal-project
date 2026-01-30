@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 
 const highlights = [
@@ -138,4 +139,8 @@ export const About = () => {
       </div>
     </section>
   );
+=======
+export const About = () => {
+  return <section></section>;
+>>>>>>> refs/remotes/origin/main
 };
